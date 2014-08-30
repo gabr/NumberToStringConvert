@@ -4,6 +4,7 @@ using namespace std;
 
 int CharToInt(char c);
 char OneDigitIntToChar(int i);
+int CStringToInt(char* text);
 
 int main(int argc, char* argv[])
 {
@@ -11,6 +12,7 @@ int main(int argc, char* argv[])
 
     cout << CharToInt('7') << endl;
     cout << OneDigitIntToChar(13) << " " << OneDigitIntToChar(-7) << " " << OneDigitIntToChar(3) << endl;
+    cout << CStringToInt("17") << endl;
     return 0;
 }
 
@@ -26,5 +28,10 @@ char OneDigitIntToChar(int i)
         return '0';
     
     return i + '0';
+}
+
+int CStringToInt(char* text)
+{
+    return strtol(text, NULL, 10);
 }
 #pragma endregion
